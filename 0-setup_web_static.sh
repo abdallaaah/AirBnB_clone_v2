@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # this is script to configure a new ubuntu machine
-sudo apt-get install nginx -y
+sudo apt-get install nginx -qq -y
 mkdir -p /data/
 mkdir -p /data/web_static/
 mkdir -p /data/web_static/releases/
