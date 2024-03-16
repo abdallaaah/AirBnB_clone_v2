@@ -6,7 +6,13 @@ mkdir -p /data/web_static/
 mkdir -p /data/web_static/releases/
 mkdir -p /data/web_static/shared/
 mkdir -p /data/web_static/releases/test/
-sudo bash -c 'echo "hello from index nginx work " >> /data/web_static/releases/test/index.html'
+sudo bash -c 'echo "<html>
+  <head>
+  </head>
+  <body>
+    Holberton School
+  </body>
+</html>" >> /data/web_static/releases/test/index.html'
 sudo rm -rf /data/web_static/current
 ln -sf /data/web_static/releases/test/ /data/web_static/current 
 sudo chown -R ubuntu:ubuntu /data/
