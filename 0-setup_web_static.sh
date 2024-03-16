@@ -1,22 +1,17 @@
 #!/usr/bin/env bash
-# this is script to configure a new ubuntu machine
-sudo apt-get install nginx -qq -y
-mkdir -p /data/
-mkdir -p /data/web_static/
-mkdir -p /data/web_static/releases/
-mkdir -p /data/web_static/shared/
+# Sets up a web server for deployment of web_static.
+
+apt-get update
+apt-get install -y nginx
+
 mkdir -p /data/web_static/releases/test/
-sudo bash -c 'echo "<html>
-  <head>
-  </head>
-  <body>
-    Holberton School
-  </body>
-</html>" >> /data/web_static/releases/test/index.html'
-sudo rm -rf /data/web_static/current
-ln -sf /data/web_static/releases/test/ /data/web_static/current 
-sudo chown -R ubuntu:ubuntu /data/
-# nginx configuations
+mkdir -p /data/web_static/shared/
+echo "Holberton School" > /data/web_static/releases/test/index.html
+ln -sf /data/web_static/releases/test/ /data/web_static/current
+
+chown -R ubuntu /data/
+chgrp -R ubuntu /data/
+
 printf %s "server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -39,5 +34,5 @@ printf %s "server {
       internal;
     }
 }" > /etc/nginx/sites-available/default
-sudo systemctl restart nginx
-exit 0
+
+service nginx restart
