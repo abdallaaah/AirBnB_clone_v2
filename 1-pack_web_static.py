@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 def do_pack():
-
+    """this function to create a tar file"""
     local("mkdir -p verions")
     datetimenw = datetime.now().strftime("%Y%m%d%H%M%S")
     result = local(f"tar -czvf verions/web_static_{datetimenw}.tgz web_static", capture=True)
