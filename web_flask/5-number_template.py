@@ -42,7 +42,7 @@ def display_integet_numbers(num):
 def return_number_Template(n):
     """this is to render template with dynamic number"""
     if isinstance(n, int):
-        return render_template('5-number.html', number=n)
+        return (render_template('5-number.html', numberr=n))
 
 
 if __name__ == "__main__":
