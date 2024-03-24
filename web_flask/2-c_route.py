@@ -2,6 +2,7 @@
 """ 1. Script to start a Flask web application with 2 commands """
 
 from flask import Flask
+from markupsafe import escape
 app = Flask(__name__)
 
 
@@ -20,7 +21,7 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def display_text(text):
     """this is to dislay txt after the slash and replace coma with text"""
-    return f"c {text.replace('_',' ')}"
+    return f"c {escape(text.replace('_',' '))}"
 
 
 if __name__ == "__main__":
