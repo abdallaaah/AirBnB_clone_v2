@@ -23,7 +23,7 @@ def display_text(text):
     """this is to dislay txt after the slash and replace coma with text"""
     return f"C {escape(text.replace('_',' '))}"
 
-@app.route('/c/<text>', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def display_text_python(text="is cool"):
     """this is to display txt after the slash with defualt value python"""
     return f"Python {escape(text.replace('_',' '))}"
