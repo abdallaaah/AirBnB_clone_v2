@@ -37,11 +37,12 @@ def display_integet_numbers(num):
     if isinstance(num, int):
         return f"{num} is a number"
 
+
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def return_number_Template(n):
-    """this is to render template with dynamic number in integar case only integers"""
+    """this is to render template with dynamic number"""
     if isinstance(n, int):
-        return render_template('5-number.html', n=n)
+        return render_template('5-number.html', number=n)
 
 
 if __name__ == "__main__":
