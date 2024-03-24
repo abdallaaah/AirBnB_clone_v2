@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def index():
-    """this is the index page for the app"""
+    """this is the index page for the apppp"""
     return "Hello HBNB!"
 
 
