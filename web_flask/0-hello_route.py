@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """the entry point"""
+from flask import Flask
 
-from . import app
-
+app = Flask(__name__)
 
 if __name__ == "__main__":
     """the first point the app start from"""
