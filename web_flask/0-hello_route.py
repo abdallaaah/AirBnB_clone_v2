@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from . import app
 """the entry point"""
+from . import app
 
 
 if __name__ == "__main__":

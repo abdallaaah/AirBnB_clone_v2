@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from flask import Flask
 """this init file for the webflask app"""
+from flask import Flask
 
 app = Flask(__name__)
