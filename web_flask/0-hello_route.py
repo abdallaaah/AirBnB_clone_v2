@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """the entry point"""
+
 from . import app
 
 
